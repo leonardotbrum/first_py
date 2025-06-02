@@ -28,4 +28,4 @@ jobs:
         pip install ruff  # Instala o Ruff
 
     - name: Run Ruff Linting
-      run: ruff .
+      run: ruff check
