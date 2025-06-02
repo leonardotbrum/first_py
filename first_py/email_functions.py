@@ -1,4 +1,5 @@
-from botcity.plugins.email import BotEmailPlugin
+from botcity.plugins.email import BotEmailPlugin, MailServers
+
 
 def ler_email(usuario: str, senha: str, assunto: str) -> list:
     """
@@ -18,11 +19,7 @@ def ler_email(usuario: str, senha: str, assunto: str) -> list:
     emails_info = []
 
     for msg in messages:
-        email_data = {
-            "Date": msg.date_str,
-            "From": msg.from_,
-            "Message": msg.text
-        }
+        email_data = {"Date": msg.date_str, "From": msg.from_, "Message": msg.text}
         emails_info.append(email_data)
 
     return emails_info
